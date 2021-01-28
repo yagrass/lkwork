@@ -10,6 +10,13 @@ CCPP := g++
 FLAG := -I$(INC) -c
 FLAGG := -I$(INC) -c -g
 
+lk04_1: lk04_1.o
+	$(CC) -o $@ $<
+	@rm -f *.o
+
+lk04_1.o: lk04_1.c
+	@$(CC) $(FLAG) $<
+
 lk03_2: lk03_2.o
 	$(CC) -o $@ $<
 	@rm -f *.o
@@ -45,3 +52,5 @@ clean:
 	@rm -f lk02
 	@rm -f lk03_1
 	@rm -f lk03_2
+	@rm -f lk04_1
+	@rm -f lk04_2
